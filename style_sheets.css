@@ -3,20 +3,139 @@ img{
 }
 
 *{
+    list-style: none;
+    text-decoration: none;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 5;
 }
+
+.wrapper{
+    display: flex;
+    justify-content: start;
+    margin-top: 5px;
+    border: solid 1px black;
+    z-index: 5;
+}
+
+.menu, .menu-characters, .menu-bosses, .menu-enemies{
+    border: solid 1px black;
+    z-index: 5;
+}
+
+.header-menu, .header-menu-characters, .header-menu-bosses, .header-menu-enemies{
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 52px;
+    font-size: 20px;
+    cursor:pointer;
+    margin: 0 auto 30px;
+    transition: all 0.2s ease;
+    z-index: 5;
+}
+
+
+.header-menu:hover,.header-menu-characters:hover, .header-menu-bosses:hover, .header-menu-enemies:hover > .header-icon{
+    opacity: 60%;
+    z-index: 5;
+}
+
+
+ .header-title{
+    color: #ffffff;
+    text-align: center;
+     z-index: 5;
+}
+.dd_wrap,.dd_wrap-characters, .dd_wrap-bosses, .dd_wrap-enemies{
+    width: 225px;
+    position: relative;
+    display: none;
+    z-index: 5;
+}
+
+.dd_wrap.active, .dd_wrap-characters.active, .dd_wrap-bosses.active, .dd_wrap-enemies.active{
+    display: block;
+    z-index: 5;
+}
+
+
+.dd_wrap ul li, .dd_wrap-characters ul li, .dd_wrap-bosses ul li, .dd_wrap-enemies ul li{
+    position: relative;
+    text-align: center;
+    z-index: 5;
+}
+
+.dd_wrap ul li a, .dd_wrap-characters ul li a, .dd_wrap-bosses ul li a, .dd_wrap-enemies ul li a{
+    display: block;
+    background: #413930;
+    color: #ffffff;
+    padding: 5px;
+    width: 100%;
+    transition: all 0.2s ease;
+    z-index: 5;
+}
+
+.dd_wrap ul li a:hover,
+.dd_wrap ul li a.active,
+.dd_wrap-characters ul li a:hover,
+.dd_wrap-characters ul li a.active,
+.dd_wrap-bosses ul li a:hover,
+.dd_wrap-bosses ul li a.active,
+.dd_wrap-enemies ul li a:hover,
+.dd_wrap-enemies ul li a.active{
+    background: #2E2D2D;
+    z-index: 5;
+}
+
+.dd_wrap ul li:first-child a,
+.dd_wrap-characters ul li:first-child a,
+.dd_wrap-bosses ul li:first-child a,
+.dd_wrap-enemies ul li:first-child a{
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    z-index: 5;
+}
+
+.dd_wrap ul li:last-child a,
+.dd_wrap-characters ul li:last-child a,
+.dd_wrap-bosses ul li:last-child a,
+.dd_wrap-enemies ul li:last-child a{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    z-index: 5;
+}
+
+.dd_wrap:before{
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 15px solid;
+    border-color: transparent transparent #413930 transparent;
+    z-index: 5;
+}
+
 
 html, body{
     height: 100%;
 }
 
 body{
-    font-family: "Adobe Garamond Pro";
-    background-color: #999;
+    font-family: "Javanese Text";
+    background: rgba(34, 34, 32, 1);
 }
 
 p{
     margin: 0.5em 0 0.5em 0;
+    line-height: 25px;
+}
+
+.header-icon{
+    width: 70%;
 }
 
 header{
@@ -25,8 +144,19 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #222220;
-    padding: 30px;
+    background: rgba(34, 34, 32, 0.7);
+    padding: 5px;
+}
+
+.dark-souls-3-logo{
+    position: fixed;
+    left: 1500px;
+    top: 20px;
+}
+
+.header-icon-and-title{
+    padding-left: 65px;
+    padding-right: 65px;
 }
 
 nav a:visited,
@@ -51,11 +181,45 @@ main{
     background-image: url("images/background.jpg");
     padding-top: 3em;
     padding-bottom: 3em;
-    min-height: 85%;
+    min-height: 95%;
+
 }
 
+main > .black-box{
+    display: block;
+    position: fixed;
+    top: 180px;
+    bottom: 65px;
+    left: 180px;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    z-index: 0;
+
+}
+
+article{
+    display: block;
+    position: absolute;
+    top: 180px;
+    bottom: 65px;
+    left: 220px;
+    width: 80%;
+    padding: 5px;
+    z-index: 0;
+}
+
+.site-logo{
+    position: relative;
+    text-align: right;
+    margin: 0;
+}
+
+.site-logo > img{
+    padding-bottom: 10px;
+}
 footer{
-    padding: 15px;
+    padding: 10px;
 }
 
 aside, article{
@@ -70,12 +234,29 @@ article{
     width: 75%;
 }
 
+.home-text{
+    color: #ffffff;
+}
 h1{
-    font-size: 3em;
+    font-size: 2em;
     margin-top: 0.5em;
+    font-family: OptimusPrincepsSemiBold;
 }
 
 .sub-title{
     font-size: 1.5em;
     padding: 10px;
 }
+
+.wrap{
+    /*border: solid 1px green;*/
+}
+.icon{
+    position: absolute;
+    right: 10px;
+    width: 15%;
+    /*border: solid 1px blue;*/
+
+}
+
+
